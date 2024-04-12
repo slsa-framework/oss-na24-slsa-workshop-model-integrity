@@ -85,7 +85,7 @@ Enter verification code:
 
 You shoud be prompted with a verification code. If you do not, re-run the same command but additionally pass the `--disable-ambient` flag.
 
-WWHat is the verification code? Sigstore is asking you to authenticate to your email provider via [OIDC Connect](https://openid.net/developers/how-connect-works/). At the time of writing, Sigstore supports [three identity providers](https://github.com/sigstore/model-transparency/blob/main/model_signing/README.md): Google, Microsoft and GitHub. Copy the weblink that is presented to you in your web browser and follow the steps. You'll get a token. Copy it in the terminal and press Enter.
+WHat is the verification code? Sigstore is asking you to authenticate to your email provider via [OIDC Connect](https://openid.net/developers/how-connect-works/). At the time of writing, Sigstore supports [three identity providers](https://github.com/sigstore/model-transparency/blob/main/model_signing/README.md): Google, Microsoft and GitHub. Copy the weblink that is presented to you in your web browser and follow the steps. You'll get a token. Copy it in the terminal and press Enter.
 
 ```shell
 Enter verification code: .....
