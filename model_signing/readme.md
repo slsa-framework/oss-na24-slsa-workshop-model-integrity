@@ -51,7 +51,7 @@ All you need to verify is an identity and an identity provider. No cryptographic
 
 ### End-to-end model signing and verification
 
-#### Mode training
+#### Model training
 
 Training will take up to 15mn. You can use the pre-trained model from the previous section instead if you prefer.
 
