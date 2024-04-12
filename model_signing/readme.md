@@ -165,7 +165,7 @@ $ jq -r '.dsseEnvelope.payload' <"${model_path}/model.sig" | base64 -d | jq
 
 ```
 
-You see a list of files present in the model, each with their corresponding path and digest. Notice the digest is of type `sha256-p1`. Model files can be several hundreds of gigabytes in size. So to speed up hash computation, each file is split into multiple chunks that are hashes separately. `p` stands for "parallel", because multiple hashing routines work in parallel to compute a file digest.
+You see a list of files present in the model, each with their corresponding path and digest. Notice the digest is of type `sha256-p1`. Model files can be several hundreds of gigabytes in size. So to speed up hash computation, each file is split into multiple chunks that are hashed separately. `p` stands for "parallel", because multiple hashing routines work in parallel to compute a file digest.
 
 ### Future work
 
