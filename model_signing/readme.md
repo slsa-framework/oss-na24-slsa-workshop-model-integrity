@@ -1,4 +1,4 @@
-# 05.1 - Model signing
+# 05.2 - Model signing
 
 ## Highlight
 
