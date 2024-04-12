@@ -1,4 +1,4 @@
-# SLSA for Models
+# 05.1 - SLSA for Models
 
 This example uses [SLSA L3 GitHub generator][slsa-generator] to generate SLSA
 provenance for ML models in GitHub Actions. This happens during a
