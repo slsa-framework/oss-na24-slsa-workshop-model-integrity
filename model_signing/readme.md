@@ -22,7 +22,7 @@ Install [Sigstore](https://github.com/slsa-framework/oss-na24-slsa-workshop/blob
 
 ### Warmup: Model verification
 
-Download the model tarball frmo GitHub at [https://github.com/slsa-framework/oss-na24-slsa-workshop-model-integrity/releases/download/v0.0.1/tensorflow_saved_model.tar.gz](https://github.com/slsa-framework/oss-na24-slsa-workshop-model-integrity/releases/download/v0.0.1/tensorflow_saved_model.tar.gz). The extract its content:
+Download the model tarball from GitHub at [https://github.com/slsa-framework/oss-na24-slsa-workshop-model-integrity/releases/download/v0.0.1/tensorflow_saved_model.tar.gz](https://github.com/slsa-framework/oss-na24-slsa-workshop-model-integrity/releases/download/v0.0.1/tensorflow_saved_model.tar.gz). The extract its content:
 
 ```shell
 $ tar xvzf tensorflow_saved_model.tar.gz
