@@ -46,9 +46,32 @@ All you needed to verify was an identity and its provider. No cryptographic keys
 ### End-to-end model signing and verification
 
 #### Mode training
-TODO: download ready-made or instruction to run it.
 
-This will take 10mn or so. You can download a pre-trained model if you prefer.
+Training will take up to 15mn. You can use the pre-trained model from the previous section instead.
+
+Ensure you are running in the [python virtal environment](https://github.com/slsa-framework/oss-na24-slsa-workshop/blob/main/INSTALLATION.md#sigstore-python) where you installed the tooling: 
+
+```shell
+$ cd sigstore-python
+$ source env/bin/activate
+$ cd ..
+```
+
+Then follow the instuctions below:
+
+```shell
+$ git clone git@github.com:slsa-framework/oss-na24-slsa-workshop-model-integrity.git && cd oss-na24-slsa-workshop-model-integrity
+# One of Linux, Windows or macOS
+$ OS=Linux
+$ python3 -m pip install --require-hashes -r "slsa_for_models/install/requirements_${OS}.txt"
+# Start the training
+# WARNING: This may take up to 15mn.
+$ python3 slsa_for_models/main.py tensorflow_saved_model
+$ model_path=$(pwd)/tensorflow_saved_model
+$ cd ..
+```
+
+The mode is stored under directory `tensorflow_saved_model`.
 
 #### Model signing
 
@@ -62,8 +85,7 @@ $ cd ..
 
 ```shell
 $ cd model-transparency/model_signing
-$ model=path/to/model/
-$ python3 main.py sign --path "${model}"
+$ python3 main.py sign --path "${model_path}"
 Go to the following link in a browser:
 
 	https://oauth2.sigstore.dev/auth/auth?response_type=code....
@@ -71,7 +93,9 @@ Go to the following link in a browser:
 Enter verification code:
 ```
 
-What just happened? What is this link? Sigstore is asking you to authenticate to you email provider via [OIDC Connect](https://openid.net/developers/how-connect-works/). At the time of writing, Sigstore supports [three identity providers](https://github.com/sigstore/model-transparency/blob/main/model_signing/README.md): Google, Microsoft and GitHub. Copy the weblink that is presented to you in your web browser and follow the steps. You'll get a token. Copy it in the terminal and press Enter.
+You shoud be prompted with a verification code. If you do not, re-run the same command but additionally pass the `--disable-ambient` flag.
+
+WWHat is the verification code? Sigstore is asking you to authenticate to your email provider via [OIDC Connect](https://openid.net/developers/how-connect-works/). At the time of writing, Sigstore supports [three identity providers](https://github.com/sigstore/model-transparency/blob/main/model_signing/README.md): Google, Microsoft and GitHub. Copy the weblink that is presented to you in your web browser and follow the steps. You'll get a token. Copy it in the terminal and press Enter.
 
 ```shell
 Enter verification code: .....
@@ -92,8 +116,7 @@ To verify, you need to know both the identity of the signer and its identity pro
 ```shell
 $ provider=_one_of_providers_above
 $ identity=email@provider.com
-$ model=path/to/model/
-$ python3 main.py verify --path "${model}" --identity "${identity}" --identity-provider "${provider}"
+$ python3 main.py verify --path "${model_path}" --identity "${identity}" --identity-provider "${provider}"
 ```
 
 Try editing, deleting or adding files to your model and re-run the verification.
@@ -105,10 +128,9 @@ The signature file is in a format called a [Sigstore bundle](https://github.com/
 Let's take a look at the signature file. Make sure [jq](https://github.com/slsa-framework/oss-na24-slsa-workshop/blob/main/INSTALLATION.md#jq) and [openssl](https://github.com/slsa-framework/oss-na24-slsa-workshop/blob/main/INSTALLATION.md#openssl) are installed on your machine.
 
 ```shell
-$ model=path/to/model/
-$ jq < "${model}model.sig"
+$ jq < "${model_path}/model.sig"
 # Visualize the certificate Sigstore created for your identity
-$ jq -r '.verificationMaterial.certificate.rawBytes'< "${model}"model.sig | base64 -d | openssl x509 -text -noout
+$ jq -r '.verificationMaterial.certificate.rawBytes'< "${model_path}/model.sig" | base64 -d | openssl x509 -text -noout
 [...]
 X509v3 Subject Alternative Name: critical
     email:laurentsimon@google.com
@@ -123,31 +145,46 @@ The identity and identity providers will look different for you.
 Now let's see the actual data that was signed:
 
 ```shell
-$ model=path/to/model/
-$ jq -r '.dsseEnvelope.payload' <"${model}"model.sig | base64 -d | jq
+$ jq -r '.dsseEnvelope.payload' <"${model_path}/model.sig" | base64 -d | jq
 [...]
 "files": [
     {
-        "path": "file1",
+        "path": "fingerprint.pb",
         "digest": {
-            "sha256-p1": "219f53a60f342f50dbe0d826c11daa01d55fded4b508c7559952fdae38c0e835"
+            "sha256-p1": "6c6b3dab5e529ac434f5640dc0c2593eff1569a2b87238cd7fc35181f42b1cbf"
         }
     },
     {
-        "path": "file2",
+        "path": "saved_model.pb",
         "digest": {
-            "sha256-p1": "7c006a42fcd3bfff91e279da0f467ecc7ba07027a8f208e9f5671f5e844bfd2c"
+            "sha256-p1": "ea9e0870b9a6911a3e2066cd91b7ea467c2c26248ee171c2f6c7c32f7c13c7fd"
+        }
+    },
+    {
+        "path": "variables/variables.data-00000-of-00001",
+        "digest": {
+            "sha256-p1": "f4058fefc1932d7e6480087fb357b38dc935084494d81afeb50b02a54a80938b"
+        }
+    },
+    {
+        "path": "variables/variables.index",
+        "digest": {
+            "sha256-p1": "35a26c0124980180d0bd40cb883bce58b06d421ec1ed49be634d9a37bafbab6e"
         }
     }
-    [...]
 ]
+
 ```
 
-You see a list of files present in the model, each with their path and digest. Notice the digest is of type `sha256-p1`. Model files can be several hundreds of gigabytes in size. So to speed up hash computation, each file is split into multiple chunks that are hashes separately. `p` stands for parallel, because multiple hashing routine work in parallel to compute a file digest.
+You see a list of files present in the model, each with their corresponding path and digest. Notice the digest is of type `sha256-p1`. Model files can be several hundreds of gigabytes in size. So to speed up hash computation, each file is split into multiple chunks that are hashes separately. `p` stands for "parallel", because multiple hashing routines work in parallel to compute a file digest.
 
 ### Future work
 
-#### Support other protection types
+#### Sign on publication
+
+Try signinng your models before uploading them to your favorite hub, [Huggingface](https://huggingface.co/), [Tensorflow hub](https://www.tensorflow.org/hub), [PyTorch hub](https://pytorch.org/hub/), etc.
+
+#### Support workoad identities
 
 Signing with Sigstore not only supports human identity (email addresses), but also workflow identity. For automated signing using a workload identity, the following platforms are currently supported, shown with their expected identities:
 
@@ -157,6 +194,10 @@ Signing with Sigstore not only supports human identity (email addresses), but al
 Buildkite CI (`https://buildkite.com/ORGANIZATION_SLUG/PIPELINE_SLUG`)
 
 Try that out and let us know how it goes!
+
+#### Sign other data
+
+You can use the same CLI / API to sign datasets, checkpoints, etc.
 
 ## Take the quizz!
 
