@@ -22,7 +22,12 @@ Install [Sigstore](https://github.com/slsa-framework/oss-na24-slsa-workshop/blob
 
 ### Warmup: Model verification
 
-TODO: download from GH
+Download the model tarball frmo GitHub at [https://github.com/slsa-framework/oss-na24-slsa-workshop-model-integrity/releases/download/v0.0.1/tensorflow_saved_model.tar.gz](https://github.com/slsa-framework/oss-na24-slsa-workshop-model-integrity/releases/download/v0.0.1/tensorflow_saved_model.tar.gz). The extract its content:
+
+```shell
+$ tar xvzf tensorflow_saved_model.tar.gz
+$ model_path=$(pwd)/tensorflow_saved_model
+```
 
 Ensure you are running in the [python virtal environment](https://github.com/slsa-framework/oss-na24-slsa-workshop/blob/main/INSTALLATION.md#sigstore-python) where you installed the tooling: 
 
@@ -38,26 +43,19 @@ Verify the model. The signer is `laurentsimon@google.com` and the identity provi
 $ provider=https://accounts.google.com
 $ identity=laurentsimon@google.com
 $ cd model-transparency/model_signing
-$ python3 main.py verify --path path/to/model/ --identity "${identity}" --identity-provider "${provider}"
+$ python3 main.py verify --path "${model_path}" --identity "${identity}" --identity-provider "${provider}"
+$ cd ../../
 ```
 
-All you needed to verify was an identity and its provider. No cryptographic keys involved. Let's see in details how everything fits together in the next section.
+All you need to verify is an identity and an identity provider. No cryptographic keys involved. Let's see in details how everything fits together in the next section.
 
 ### End-to-end model signing and verification
 
 #### Mode training
 
-Training will take up to 15mn. You can use the pre-trained model from the previous section instead.
+Training will take up to 15mn. You can use the pre-trained model from the previous section instead if you prefer.
 
-Ensure you are running in the [python virtal environment](https://github.com/slsa-framework/oss-na24-slsa-workshop/blob/main/INSTALLATION.md#sigstore-python) where you installed the tooling: 
-
-```shell
-$ cd sigstore-python
-$ source env/bin/activate
-$ cd ..
-```
-
-Then follow the instuctions below:
+Follow the instuctions below:
 
 ```shell
 $ git clone git@github.com:slsa-framework/oss-na24-slsa-workshop-model-integrity.git && cd oss-na24-slsa-workshop-model-integrity
@@ -71,17 +69,9 @@ $ model_path=$(pwd)/tensorflow_saved_model
 $ cd ..
 ```
 
-The mode is stored under directory `tensorflow_saved_model`.
+The model is stored under directory `tensorflow_saved_model`.
 
 #### Model signing
-
-Ensure you are running in the [python virtal environment](https://github.com/slsa-framework/oss-na24-slsa-workshop/blob/main/INSTALLATION.md#sigstore-python) where you installed the tooling: 
-
-```shell
-$ cd sigstore-python
-$ source env/bin/activate
-$ cd ..
-```
 
 ```shell
 $ cd model-transparency/model_signing
