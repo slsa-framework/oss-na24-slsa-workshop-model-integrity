@@ -192,7 +192,7 @@ You can use the same CLI / API to sign datasets, checkpoints, etc.
 
 After completing this activity, you should be able to answer the following questions:
 
-1. What is Sigstore? What are its advantages for individuals? 
+1. What is Sigstore? What are its benefits? 
 2. What format are signature files?
-3. What data is present in the signature?
-4. Why is hasing of models slow? What does this demo do to speed up hashing?
+3. What data is present in the signature file?
+4. Why is hashing of models slow? What does this demo do to speed up hashing?
