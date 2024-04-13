@@ -173,16 +173,16 @@ You see a list of files present in the model, each with their corresponding path
 
 Try signinng your models before uploading them to your favorite hub, [Huggingface](https://huggingface.co/), [Tensorflow hub](https://www.tensorflow.org/hub), [PyTorch hub](https://pytorch.org/hub/), etc.
 
-#### Support workoad identities
+#### Support for workload identities
 
-Signing with Sigstore not only supports human identity (email addresses), but also workflow identity. For automated signing using a workload identity, the following platforms are currently supported, shown with their expected identities:
+Signing with Sigstore not only supports human identities (email addresses), but also workload identities. For automated signing using a workload identity, the following platforms are currently supported, shown with their expected identities:
 
 - GitHub Actions (`https://github.com/octo-org/octo-automation/.github/workflows/oidc.yml@refs/heads/main`)
 - GitLab CI (`https://gitlab.com/my-group/my-project//path/to/.gitlab-ci.yml@refs/heads/main`)
 - Google Cloud Platform (`SERVICE_ACCOUNT_NAME@PROJECT_ID.iam.gserviceaccount.com`)
 Buildkite CI (`https://buildkite.com/ORGANIZATION_SLUG/PIPELINE_SLUG`)
 
-Try that out and let us know how it goes!
+On GitHub, if you set your workflow permissions to `id-token: write`, the CLI will sign using the workflow identity by default.
 
 #### Sign other data
 
