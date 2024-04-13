@@ -171,7 +171,7 @@ You see a list of files present in the model, each with their corresponding path
 
 #### Sign on publication
 
-Try signinng your models before uploading them to your favorite hub, [Huggingface](https://huggingface.co/), [Tensorflow hub](https://www.tensorflow.org/hub), [PyTorch hub](https://pytorch.org/hub/), etc.
+Try signing your models before uploading them to your favorite hub, [Huggingface](https://huggingface.co/), [Tensorflow hub](https://www.tensorflow.org/hub), [PyTorch hub](https://pytorch.org/hub/), etc.
 
 #### Support for workload identities
 
@@ -184,7 +184,7 @@ Buildkite CI (`https://buildkite.com/ORGANIZATION_SLUG/PIPELINE_SLUG`)
 
 On GitHub, if you set your workflow permissions to `id-token: write`, the CLI will sign using the workflow identity by default.
 
-#### Sign other data
+#### Sign other metadata
 
 You can use the same CLI / API to sign datasets, checkpoints, etc.
 
@@ -195,4 +195,4 @@ After completing this activity, you should be able to answer the following quest
 1. What is Sigstore? What are its benefits? 
 2. What format are signature files?
 3. What data is present in the signature file?
-4. Why is hashing of models slow? What does this demo do to speed up hashing?
+4. Why is hashing of models slow? What does this this project do to speed up hashing?
