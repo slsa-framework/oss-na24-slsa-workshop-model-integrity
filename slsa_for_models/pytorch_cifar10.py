@@ -16,8 +16,8 @@
 # We will do a lazy import for these 7 modules, exploiting Python's symbol
 # resolution. The lazy import is needed to make sure we only import PyTorch
 # libraries only if we want to train a PyTorch model.
-torch = None
-nn = None
+import torch
+import torch.nn as nn
 F = None
 optim = None
 torchvision = None
@@ -30,14 +30,10 @@ def pretraining():
     Does the lazy loading of TensorFlow too, to prevent compatibility issues
     with mixing TensorFlow and PyTorch imports.
     """
-    global torch
-    global nn
     global F
     global optim
     global torchvision
     global transforms
-    import torch
-    import torch.nn as nn
     import torch.nn.functional as F
     import torch.optim as optim
     import torchvision
