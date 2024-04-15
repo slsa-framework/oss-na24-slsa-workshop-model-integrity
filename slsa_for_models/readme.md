@@ -19,10 +19,13 @@ As an additional benefit, having provenance for a model allows users to react
 to vulnerabilities in a training framework: they can quickly determine if a
 model needs to be retrained because it was created using a vulnerable version.
 
-To test, fork this repository, then head over to the Actions tab and select the
-"SLSA for ML models example" workflow. Since the workflow has a
-`workflow_dispatch` trigger, it can be invoked on demand: click the `Run
-workflow` button, then select the value for the "Name of the model" argument.
+## Part 1: Generate a model with provenance
+
+As the first part of the exercise, fork this repository, then head over to the
+Actions tab and select the "SLSA for ML models example" workflow. Since the
+workflow has a `workflow_dispatch` trigger, it can be invoked on demand: click
+the `Run workflow` button, then select the value for the "Name of the model"
+argument.
 
 ![Triggering a SLSA workflow](images/slsa_trigger.png)
 
@@ -43,19 +46,22 @@ SLSA provenance attached to the model.
 
 ![Results of running a SLSA workflow](images/slsa_results.png)
 
+## Part 2: Verify provenance
+
 To verify the provenance, download both archives, unzip each and then run
 `slsa-verifier`, making sure to replace the `--source-uri` argument with the
 _path to your fork_. For example, for a PyTorch model, which has been [built on
-this repository](https://github.com/google/model-transparency/actions/runs/6646816974):
+this repository](https://github.com/slsa-framework/oss-na24-slsa-workshop-model-integrity/actions/runs/8693381758):
 
 ```bash
 [...]$ slsa-verifier verify-artifact \
-       --provenance-path pytorch_model.pth.intoto.jsonl \
-       --source-uri github.com/google/model-transparency \
+       --provenance-path pytorch_jitted_model.pt.intoto.jsonl.pth.intoto.jsonl \
+       --source-uri github.com/slsa-framework/oss-na24-slsa-workshop-model-integrity \
        pytorch_model.pth
 Verified signature against tlog entry index 45419124 at URL: https://rekor.sigstore.dev/api/v1/log/entries/24296fb24b8ad77a98dd03d23a78657e7f1efd3d9bea6988abbf23a72290a4ec7dc35c9edeab7ee1
-Verified build using builder "https://github.com/slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@refs/tags/v1.9.0" at commit ac26cbf66849cfec6f29747f4525180595c7eef0
-Verifying artifact pytorch_model.pth: PASSED
+Verified signature against tlog entry index 85886826 at URL: https://rekor.sigstore.dev/api/v1/log/entries/24296fb24b8ad77ad3a9174b37b7c1ad9f3d09e3f4b64344d5f17e37d9e587bcabae051c5eb30b2d
+Verified build using builder "https://github.com/slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@refs/tags/v1.10.0" at commit e5f190f5b37942f9c2e134f1494c5ea3e5f7c900
+Verifying artifact /tmp/slsa/pytorch_jitted_model.pt: PASSED
 
 PASSED: Verified SLSA provenance
 ```
@@ -63,7 +69,7 @@ PASSED: Verified SLSA provenance
 The verification of provenance can be done just before the model gets loaded in
 the serving pipeline.
 
-## Future Work
+## Part 3: Future Work
 
 While most of the ML models are currently too expensive to train, future work will
 cover the training of ML models that require access to accelerators (i.e., GPUs, TPUs)
@@ -79,8 +85,30 @@ during model signing, we have decided to add support for these model formats at
 a future time, after standardizing a way to generate and verify provenance in
 SLSA (in general, not just for ML).
 
+## Part 4: Optional homework
+
+1. The current [workflow][workflow] only builds an artifact for Linux and
+   generates provenance for it. Try adapting the workflow to train the model on
+   MacOS and Windows too by uncommenting the corresponding lines.
+
+   Note: TensorFlow models currently don't train on Windows due to a unicode bug
+   in upstream libraries.
+
+2. In the previous example, you generated 3 different provenances for 3
+   different artifacts. Change the [workflow][workflow] to generate just one
+   provenance for all artifacts. The [SLSA GitHub generator
+   page](https://github.com/slsa-framework/slsa-github-generator/blob/main/internal/builders/generic/README.md#a-single-provenance-attestation-for-all-artifacts)
+   is a good resource to consult.
+
+## Part 5: Take the quiz!
+
+1. What is SLSA? How does it protect your supply chain?
+2. What is different in SLSA for ML?
+3. What aspects of ML development are not currently considered in this workflow?
+4. What inputs should we record as SLSA materials in the provenance?
+
 [slsa-generator]: https://github.com/slsa-framework/slsa-github-generator
 [slsa-verifier]: https://github.com/slsa-framework/slsa-verifier/
 [slsa]: https://slsa.dev
 [solarwinds]: https://www.techtarget.com/whatis/feature/SolarWinds-hack-explained-Everything-you-need-to-know
-[workflow]: https://github.com/google/model-transparency/blob/main/.github/workflows/slsa_for_ml.yml
+[workflow]: https://github.com/slsa-framework/oss-na24-slsa-workshop-model-integrity/blob/main/.github/workflows/slsa_for_ml.yml
