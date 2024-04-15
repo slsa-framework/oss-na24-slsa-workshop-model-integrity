@@ -33,11 +33,11 @@ jobs:
     strategy:
       fail-fast: false # Don't cancel other jobs if one fails
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        os: [ubuntu-latest] #, macos-latest, windows-latest]
     outputs:
       hash-ubuntu-latest: ${{ steps.hash.outputs.hash-ubuntu-latest }}
-      hash-macos-latest: ${{ steps.hash.outputs.hash-macos-latest }}
-      hash-windows-latest: ${{ steps.hash.outputs.hash-windows-latest }}
+      # hash-macos-latest: ${{ steps.hash.outputs.hash-macos-latest }}
+      # hash-windows-latest: ${{ steps.hash.outputs.hash-windows-latest }}
     steps:
     - run: git config --global core.autocrlf input
     - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633 # v4.1.2
@@ -54,7 +54,7 @@ jobs:
         python -m pip install --require-hashes -r slsa_for_models/install/requirements_${{ runner.os }}.txt
     - name: Build model
       env:
-        MODEL_TYPE: ${{ github.event.inputs.model_type || 'pytorch_jitted_model.pt' }}
+        MODEL_TYPE: ${{ github.event.inputs.model_type }}
       run: |
         set -exuo pipefail
         python -m venv venv
@@ -62,12 +62,12 @@ jobs:
         python slsa_for_models/main.py "$MODEL_TYPE"
     - uses: actions/upload-artifact@5d5d22a31266ced268874388b861e4b58bb5c2f3 # v4.3.1
       with:
-        path: ${{ github.event.inputs.model_type || 'pytorch_jitted_model.pt' }}
-        name: ${{ github.event.inputs.model_type || 'pytorch_jitted_model.pt' }}_${{ runner.os }}
+        path: ${{ github.event.inputs.model_type }}
+        name: ${{ github.event.inputs.model_type }}_${{ runner.os }}
         if-no-files-found: error
     - id: hash
       env:
-        MODEL: ${{ github.event.inputs.model_type || 'pytorch_jitted_model.pt' }}
+        MODEL: ${{ github.event.inputs.model_type }}
       run: |
         set -euo pipefail
         (sha256sum -t "$MODEL" || shasum -a 256 "$MODEL") > checksum
@@ -80,7 +80,7 @@ jobs:
     strategy:
       fail-fast: false # Don't cancel other jobs if one fails
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        os: [ubuntu-latest] #, macos-latest, windows-latest]
     permissions:
       actions: read
       id-token: write
