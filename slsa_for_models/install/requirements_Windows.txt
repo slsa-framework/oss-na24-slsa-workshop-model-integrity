@@ -172,7 +172,7 @@ dm-tree==0.1.9 \
     --hash=sha256:f7ac31b9aecccb2c6e1ab29706f6ded3eba0c2c69c770322c9c685929c3d6afb \
     --hash=sha256:fa42a605d099ee7d41ba2b5fb75e21423951fd26e5d50583a00471238fb3021d
     # via tensorflow-datasets
-etils==1.8.0 \
+etils==1.14.0 \
     --hash=sha256:f31d7f27a889457eaa44eab18ce836d24fd6d40dbbb167d38879b7296f6456ea \
     --hash=sha256:fb478f57fec202e260e54c9192b317692fd63db2d11d993e70bcdffa29cccd58
     # via tensorflow-datasets
