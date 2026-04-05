@@ -261,7 +261,7 @@ grpcio==1.62.1 \
     # via
     #   tensorboard
     #   tensorflow-intel
-h5py==3.10.0 \
+h5py==3.16.0 \
     --hash=sha256:012ab448590e3c4f5a8dd0f3533255bc57f80629bf7c5054cf4c87b30085063c \
     --hash=sha256:212bb997a91e6a895ce5e2f365ba764debeaef5d2dca5c6fb7098d66607adf99 \
     --hash=sha256:2381e98af081b6df7f6db300cd88f88e740649d77736e4b53db522d8874bf2dc \
