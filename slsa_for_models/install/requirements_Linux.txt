@@ -15,15 +15,19 @@ absl-py==1.4.0 \
     #   tensorflow
     #   tensorflow-datasets
     #   tensorflow-metadata
-array-record==0.5.1 \
-    --hash=sha256:248fb29086cb3a6322a5d8b8332d77713a030bc54f0bacdf215a6d3185f73f90 \
-    --hash=sha256:6ebe99f37e3a797322f4f5cfc6902b5e852012ba2729fac628aad6affb225247 \
-    --hash=sha256:897362036f2920093eff3d729c2a6e1844e3077f513d6bd29640cd02f98e07c7 \
-    --hash=sha256:8ebd7c12c0a159a44c6c8fdaf915036fcddfdfa499a878ddcff9761c6d1af685 \
-    --hash=sha256:9922862216a9d3be76fdc27968af1ec0ea20f986329998ba45b0f01ee3e646fa \
-    --hash=sha256:b9f2e304e59a17af9f5bf2a86b93ad4700d0eeb85d742a884aa38dc0b54dda5b \
-    --hash=sha256:ea3969b9f954f6f01ddac64f59eea45392dc4eb8c1bf3d1ca5c9bcfd7f8d46e7 \
-    --hash=sha256:f08eea9a4afbfa05fb7fafaa007b89e286a8a27a7775cb80338199576ffe07b4
+array-record==0.8.3 \
+    --hash=sha256:06b17a0a90bc74a80c4ebad0b99f0e039adb01746b673db3d7a5632d8b138ddd \
+    --hash=sha256:13df1aec9b38afe98973bf5fe3cf523f83ca904b0423d85319930877145b8f28 \
+    --hash=sha256:14facb713fc55ea612cf853c0abbc602032ae619eb85037af3aa41dc4e27eed6 \
+    --hash=sha256:458f6658de86c9369b23ffe64dcb31393a919b91ae2f15147ee2beb2010b122a \
+    --hash=sha256:718403dc9a364519a5fc440ed9e2784077e965489d5a44c96970d3101101e1cd \
+    --hash=sha256:89d2cf5f4709be3c6c2b30c0d366005223375633ffce66dcb13d927a0bdc5228 \
+    --hash=sha256:8a0caee17d2583638391fb9f90c9c12a43f9665576f18ec3604ba49d62bd2dcc \
+    --hash=sha256:9f91636366038afea55061cc539601e353d04ebf32608ae8717df4a4edbd31df \
+    --hash=sha256:adfe6c92918363747539c0caa579f568f75aac079ad7bbd4ebcf7fdb02e5461b \
+    --hash=sha256:dada305fa0dfa3fd6f5f263c43ed37546f815e4f33ce30b066175384dead752e \
+    --hash=sha256:f4004fcceb7961a2cc0090028e68a3eeb91d3f5b38c00d60b533f7004d1d3f7b \
+    --hash=sha256:fa94fa053c1afaecc183a1c31463fd89d1b7b148cc526095bfc50ab58967e47c
     # via tensorflow-datasets
 astunparse==1.6.3 \
     --hash=sha256:5ad93a8456f0d084c3456d059fd9a92cce667963232cbf763eac3bc5b7940872 \
