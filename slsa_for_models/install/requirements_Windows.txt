@@ -190,7 +190,7 @@ fsspec==2024.12.0 \
     # via
     #   etils
     #   torch
-gast==0.5.4 \
+gast==0.7.0 \
     --hash=sha256:6fc4fa5fa10b72fb8aab4ae58bcb023058386e67b6fa2e3e34cec5c769360316 \
     --hash=sha256:9c270fe5f4b130969b54174de7db4e764b09b4f7f67ccfc32480e29f78348d97
     # via tensorflow-intel
