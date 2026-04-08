@@ -473,7 +473,7 @@ numpy==1.26.4 \
     #   tensorflow-datasets
     #   tensorflow-intel
     #   torchvision
-opt-einsum==3.3.0 \
+opt-einsum==3.4.0 \
     --hash=sha256:2455e59e3947d3c275477df7f5205b30635e266fe6dc300e3d9f9646bfcea147 \
     --hash=sha256:59f6475f77bbc37dcf7cd748519c0ec60722e91e63ca114e68821c0c54a46549
     # via tensorflow-intel
