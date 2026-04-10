@@ -518,7 +518,7 @@ optree==0.11.0 \
     --hash=sha256:f53951bfb640417558568284a8949d67bcdbf21fa0113107e20bd9403aa20b2b \
     --hash=sha256:fa9ed745d4cbac5e15df70339b30867ba033542b87f7b734f4cacae5ec73ba00
     # via keras
-packaging==24.0 \
+packaging==24.2 \
     --hash=sha256:2ddfb553fdf02fb784c234c7ba6ccc288296ceabec964ad2eae3777778130bc5 \
     --hash=sha256:eb82c5e3e56209074766e6885bb04b8c38a0c015d0a30036ebe7ece34c9989e9
     # via tensorflow-intel
