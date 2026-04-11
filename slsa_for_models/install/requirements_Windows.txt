@@ -681,7 +681,7 @@ sympy==1.12 \
     --hash=sha256:c3588cd4295d0c0f603d0f2ae780587e64e2efeedb3521e46b9bb1d08d184fa5 \
     --hash=sha256:ebf595c8dac3e0fdc4152c51878b498396ec7f30e7a914d6071e674d49420fb8
     # via torch
-tensorboard==2.16.2 \
+tensorboard==2.20.0 \
     --hash=sha256:9f2b4e7dad86667615c0e5cd072f1ea8403fc032a299f0072d6f74855775cc45
     # via tensorflow-intel
 tensorboard-data-server==0.7.2 \
