@@ -721,7 +721,7 @@ tensorflow-intel==2.18.0 \
     --hash=sha256:a2aed5f5f7a9e22bcedd843d7bc3595eaf75510662f8f3d113ee3223fefed16a \
     --hash=sha256:e7a12cb9668bb02c9855804854f2fb088b58094abab7b0b9706bb4fd607faa79
     # via tensorflow
-tensorflow-io-gcs-filesystem==0.31.0 \
+tensorflow-io-gcs-filesystem==0.37.1 \
     --hash=sha256:20e3ee5df01f2bd81d37fc715816c329b7533ccca967c47946eb458a5b7a7280 \
     --hash=sha256:359134ecbd3bf938bb0cf65be4526106c30da461b2e2ce05446a229ed35f6832 \
     --hash=sha256:37c40e3c4ee1f8dda3b545deea6b8839192c82037d8021db9f589908034ad975 \
