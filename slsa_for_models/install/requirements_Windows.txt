@@ -184,7 +184,7 @@ flatbuffers==24.12.23 \
     --hash=sha256:8dbdec58f935f3765e4f7f3cf635ac3a77f83568138d6a2311f524ec96364812 \
     --hash=sha256:de2ec5b203f21441716617f38443e0a8ebf3d25bf0d9c0bb0ce68fa00ad546a4
     # via tensorflow-intel
-fsspec==2024.12.0 \
+fsspec==2026.3.0 \
     --hash=sha256:918d18d41bf73f0e2b261824baeb1b124bcf771767e3a26425cd7dec3332f512 \
     --hash=sha256:f39780e282d7d117ffb42bb96992f8a90795e4d0fb0f661a70ca39fe9c43ded9
     # via

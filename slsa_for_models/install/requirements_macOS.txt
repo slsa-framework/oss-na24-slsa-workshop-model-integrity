@@ -198,9 +198,9 @@ flatbuffers==24.12.23 \
     --hash=sha256:2910b0bc6ae9b6db78dd2b18d0b7a0709ba240fb5585f286a3a2b30785c22dac \
     --hash=sha256:c418e0d48890f4142b92fd3e343e73a48f194e1f80075ddcc5793779b3585444
     # via tensorflow
-fsspec==2024.12.0 \
-    --hash=sha256:670700c977ed2fb51e0d9f9253177ed20cbde4a3e5c0283cc5385b5870c8533f \
-    --hash=sha256:b520aed47ad9804237ff878b504267a3b0b441e97508bd6d2d8774e3db85cee2
+fsspec==2026.3.0 \
+    --hash=sha256:1ee6a0e28677557f8c2f994e3eea77db6392b4de9cd1f5d7a9e87a0ae9d01b41 \
+    --hash=sha256:d2ceafaad1b3457968ed14efa28798162f1638dbb5d2a6868a2db002a5ee39a4
     # via
     #   etils
     #   torch
