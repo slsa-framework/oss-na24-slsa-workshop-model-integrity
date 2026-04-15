@@ -1102,9 +1102,9 @@ wrapt==1.17.3 \
     # via
     #   tensorflow
     #   tensorflow-datasets
-zipp==3.19.1 \
-    --hash=sha256:2828e64edb5386ea6a52e7ba7cdb17bb30a73a858f5eb6eb93d8d36f5ea26091 \
-    --hash=sha256:35427f6d5594f4acf82d25541438348c26736fa9b3afa2754bcd63cdb99d8e8f
+zipp==3.23.1 \
+    --hash=sha256:0b3596c50a5c700c9cb40ba8d86d9f2cc4807e9bedb06bcdf7fac85633e444dc \
+    --hash=sha256:32120e378d32cd9714ad503c1d024619063ec28aad2248dc6672ad13edfa5110
     # via etils
 
 # WARNING: The following packages were not pinned, but pip requires them to be
