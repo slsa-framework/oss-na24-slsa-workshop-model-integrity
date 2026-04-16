@@ -745,7 +745,7 @@ tensorflow-io-gcs-filesystem==0.37.1 \
 tensorflow-metadata==1.17.3 \
     --hash=sha256:5ff79bf96f98c800fc08270b852663afe7e74d7e1f92b50ba1487bfc63894cdb
     # via tensorflow-datasets
-termcolor==2.5.0 \
+termcolor==3.3.0 \
     --hash=sha256:9297c0df9c99445c2412e832e882a7884038a25617c60cea2ad69488d4040d63 \
     --hash=sha256:aab9e56047c8ac41ed798fa36d892a37aca6b3e9159f3e0c24bc64a9b3ac7b7a
     # via
