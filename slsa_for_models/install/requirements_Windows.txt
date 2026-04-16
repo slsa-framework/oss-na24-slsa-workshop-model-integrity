@@ -636,7 +636,7 @@ protobuf==7.34.1 \
     #   tensorflow-datasets
     #   tensorflow-intel
     #   tensorflow-metadata
-psutil==5.9.8 \
+psutil==7.2.2 \
     --hash=sha256:02615ed8c5ea222323408ceba16c60e99c3f91639b07da6373fb7e6539abc56d \
     --hash=sha256:05806de88103b25903dff19bb6692bd2e714ccf9e668d050d144012055cbca73 \
     --hash=sha256:26bd09967ae00920df88e0352a91cff1a78f8d69b3ecabbfe733610c0af486c8 \
