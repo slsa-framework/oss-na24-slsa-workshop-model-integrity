@@ -981,9 +981,9 @@ tensorflow==2.21.0 \
     --hash=sha256:b3b95643c4e70eb925839938fb35cbe142f317ec84af6844ee61513713bb13c0 \
     --hash=sha256:e9d8da8dcab9650efb45f032ba70af2f016f907e6e0c6bda29dd101bba945406
     # via -r slsa_for_models/install/requirements.in
-tensorflow-datasets==4.9.9 \
-    --hash=sha256:9cb245cad97e7d227f0b8e006491cfef860ff8d4b9d84a3c68f8b96d6295355e \
-    --hash=sha256:b94902d414cdc12a1014cda9ee5815c502c3d44215b780e06dacbd7949abd14e
+tensorflow-datasets==4.9.10 \
+    --hash=sha256:7ec065f0a628e28152b487ba9cbe72fa36d3854705d9f3abd04c6cf5d7a91527 \
+    --hash=sha256:c681c9b0e5de2acbec79ece2ad41712dfda3f1bfdb3ffc34d5c0afd786eba0f6
     # via -r slsa_for_models/install/requirements.in
 tensorflow-io-gcs-filesystem==0.37.1 \
     --hash=sha256:0df00891669390078a003cedbdd3b8e645c718b111917535fa1d7725e95cdb95 \
