@@ -711,7 +711,7 @@ tensorflow==2.21.0 \
     --hash=sha256:e9cf3fba7f389ff8b8342c5fbebb2529321e0ce9e03d7bcb3657ee0876686c36 \
     --hash=sha256:f8a5b83ca4bf1813da158f63479cfdf848c0761e5120258417b3a96074a489f5
     # via -r slsa_for_models/install/requirements.in
-tensorflow-datasets==4.9.9 \
+tensorflow-datasets==4.9.10 \
     --hash=sha256:cbf93bf87531605ea654d702763b9162546775c7aa3247975d502fd921c39e4d \
     --hash=sha256:cd7bf9c340d28be47558d5d3a4eb7278b9f7bac027abdb9d850375a9fecac7f2
     # via -r slsa_for_models/install/requirements.in
