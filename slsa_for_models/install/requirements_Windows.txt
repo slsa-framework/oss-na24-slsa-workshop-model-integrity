@@ -783,7 +783,7 @@ torch==2.11.0 \
     # via
     #   -r slsa_for_models/install/requirements.in
     #   torchvision
-torchvision==0.26.0 \
+torchvision==0.27.0 \
     --hash=sha256:067095e87a020a7a251ac1d38483aa591c5ccb81e815527c54db88a982fc9267 \
     --hash=sha256:14fd1d4a033c325bdba2d03a69c3450cab6d3a625f85cc375781d9237ca5d04d \
     --hash=sha256:1ece40557e122d79975860a005aa7e2a9e2e6c350a03e78a00ec1450083312fd \
