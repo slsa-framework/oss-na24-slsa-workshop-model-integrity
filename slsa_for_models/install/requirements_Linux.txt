@@ -643,10 +643,10 @@ nvidia-cuda-runtime-cu12==12.9.79 \
     --hash=sha256:83469a846206f2a733db0c42e223589ab62fd2fabac4432d2f8802de4bded0a4 \
     --hash=sha256:8e018af8fa02363876860388bd10ccb89eb9ab8fb0aa749aaf58430a9f7c4891
     # via torch
-nvidia-cudnn-cu12==9.22.0.52 \
-    --hash=sha256:391b9a7ee6386daaca7f8dca41e83c2c99f760c9581a0400755e87b4287b8847 \
-    --hash=sha256:5d10117314c861245992dbcf8a6f8ae1f54852137a7c9f80cc9de9fa596f7d62 \
-    --hash=sha256:cd9011812498376f866b9826331cc965ac922eb2df8549c9f2989f10255e5001
+nvidia-cudnn-cu12==9.23.0.39 \
+    --hash=sha256:357e5d59a1b79d27eef754aa79b3d9e7adf11baf86dc928dc114df0033c2c912 \
+    --hash=sha256:3da81d70ef4db38952a7f37403434cf52dddbc1b8bee428016fa0ca9f2ff2697 \
+    --hash=sha256:89d53e2a2b0614278afbeda67ac89594bdd74f9f283f22f2d34409d55859846f
     # via torch
 nvidia-cufft-cu12==11.4.1.4 \
     --hash=sha256:1a28c9b12260a1aa7a8fd12f5ebd82d027963d635ba82ff39a1acfa7c4c0fbcf \
