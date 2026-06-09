@@ -993,8 +993,9 @@ tensorflow-io-gcs-filesystem==0.37.1 \
     --hash=sha256:fe8dcc6d222258a080ac3dfcaaaa347325ce36a7a046277f6b3e19abc1efb3c5 \
     --hash=sha256:ffebb6666a7bfc28005f4fbbb111a455b5e7d6cd3b12752b7050863ecb27d5cc
     # via tensorflow
-tensorflow-metadata==1.17.3 \
-    --hash=sha256:452912e6398b3cb7302f0de6139dea794b3be1bd0eb40e6765eb3a04e51ea991
+tensorflow-metadata==1.21.0 \
+    --hash=sha256:0520806bf3bdd9157333203a3aa0e8afde2a97cc619f15ba622603dc6c898d1f \
+    --hash=sha256:2108ed8ea40df9ac4f7c506a62e9ecf5dcd40678b3308dcee2ec9e0e59d60609
     # via tensorflow-datasets
 termcolor==3.3.0 \
     --hash=sha256:348871ca648ec6a9a983a13ab626c0acce02f515b9e1983332b17af7979521c5 \
