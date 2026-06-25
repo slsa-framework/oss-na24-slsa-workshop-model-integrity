@@ -335,9 +335,9 @@ jinja2==3.1.6 \
     --hash=sha256:0137fb05990d35f1275a587e9aee6d56da821fc83491a0fb838183be43f66d6d \
     --hash=sha256:85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67
     # via torch
-keras==3.14.1 \
-    --hash=sha256:ebd2c14d2af3c9de18083604d408483996407fc7d2f9ebd1d565961f96608c29 \
-    --hash=sha256:ef479173102ad29db89b53c232efdc3fb5ad57c28bc27ead59f3e78a1eecd05b
+keras==3.15.0 \
+    --hash=sha256:0123749ac2a704d63f691994b18e432e006cb8ae910cc0ea7035d777aed9c00d \
+    --hash=sha256:9bbd7df12b7b53500d00dc24d97b7e066c771260482cb7118de0b7687a7a2781
     # via tensorflow
 libclang==18.1.1 \
     --hash=sha256:3f0e1f49f04d3cd198985fea0511576b0aee16f9ff0e0f0cad7f9c57ec3c20e8 \
