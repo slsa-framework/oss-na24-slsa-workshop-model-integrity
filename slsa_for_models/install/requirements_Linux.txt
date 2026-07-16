@@ -171,9 +171,9 @@ etils==1.14.0 \
     # via
     #   array-record
     #   tensorflow-datasets
-filelock==3.29.7 \
-    --hash=sha256:5b481979797ae69e72f0b389d89a80bdd585c260c5b3f1fb9c0a5ba9bb3f195d \
-    --hash=sha256:987db6f789a3a2a59f55081801b2b3697cb97e2a736b5f1a9e99b559285fbc51
+filelock==3.30.0 \
+    --hash=sha256:1774e682dbe443bd60f9609162fc596e2c80dc84ffc2957068953406d0520090 \
+    --hash=sha256:40632998f0772e64183bb819f086a1b9def6be1090cf1dcb9d45f46806ef279b
     # via
     #   torch
     #   triton
