@@ -993,9 +993,9 @@ torchvision==0.28.0 \
     --hash=sha256:d483b4aa3f5237569053f749cd1a2b5bb548ca456e40461a5dd087f21149d123 \
     --hash=sha256:e9f54c30cd52e3ef7fd034cc69b7bb7e0964e1c8f8743e018ab92e95b40f9eee
     # via -r slsa_for_models/install/requirements.in
-tqdm==4.68.4 \
-    --hash=sha256:19829c9673638f2a0b8617da4cdcb927e831cd88bcfcb6e78d42a4d1af131520 \
-    --hash=sha256:5168118b2368f48c561afda8020fd79195b1bdb0bdf8086b88442c267a315dc2
+tqdm==4.69.0 \
+    --hash=sha256:700c5e85dcd5f009dd6222588a29180a193a748247a5d855b4d67db93d79a53b \
+    --hash=sha256:9979978912be667a6ef21fd5d8abf54e324e63d82f7f43c360792ebc2bc4e622
     # via
     #   etils
     #   tensorflow-datasets
