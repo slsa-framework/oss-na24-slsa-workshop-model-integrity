@@ -244,9 +244,9 @@ dm-tree==0.1.10 \
     --hash=sha256:f0e8907bb6809dc195be3af077e382126eaebe06c00f835d09ae26e36d2165ff \
     --hash=sha256:f395390d6acfb5d39c564c8bbcaf35352a81eb2f0d34d449739039b2ef786e14
     # via tensorflow-datasets
-etils==1.14.0 \
-    --hash=sha256:8136e7f4c4173cd0af0ca5481c4475152f0b8686192951eefa60ee8711e1ede4 \
-    --hash=sha256:b5df7341f54dbe1405a4450b2741207b4a8c279780402b45f87202b94dfc52b4
+etils==1.15.0 \
+    --hash=sha256:7a7e242b299813f454d3c2910b8428fd5758ef3c6df58af4808fd0a511f0a032 \
+    --hash=sha256:b9e7f3d7ab980c564245cd54e2b928e6abcb0521d6042ad3fdb13eea725309f0
     # via
     #   array-record
     #   tensorflow-datasets
